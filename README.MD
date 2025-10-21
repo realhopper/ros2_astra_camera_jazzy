@@ -1,23 +1,34 @@
-# ros2_astra_camera
+# ros2_astra_camera_jazzy
 
 A ROS2 driver for Orbbec 3D cameras
+
+Ubuntu 24.04 Jazzy Build Error Fixed repo
+
+- fork : https://github.com/orbbec/ros2_astra_camera
+
+# Test Device
+
+ASTRA 3D Depth Camera
+
+[Link 1](https://www.devicemart.co.kr/goods/view?no=14564509)
+
+[Link 2](https://www.eleparts.co.kr/goods/view?no=12231083)
 
 ## Install dependencies
 
 ### ROS2
 
 ● Please refer to the
-official [ROS 2 installation guide](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html)
+official [ROS 2 installation guide](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
 
 ### other dependencies
 
 ● Install dependencies (be careful with your ROS distribution)
 
 ```bash
- Assuming you have sourced the ros environment, same below
-sudo apt install libgflags-dev  ros-$ROS_DISTRO-image-geometry ros-$ROS_DISTRO-camera-info-manager\
-ros-$ROS_DISTRO-image-transport ros-$ROS_DISTRO-image-publisher libgoogle-glog-dev libusb-1.0-0-dev libeigen3-dev
-
+Assuming you have sourced the ros environment, same below
+sudo apt install libgflags-dev  ros-jazzy-image-geometry ros-jazzy-camera-info-manager \
+ros-jazzy-image-transport ros-jazzy-image-publisher libgoogle-glog-dev libusb-1.0-0-dev libeigen3-dev
 ```
 
 ● Install libuvc
@@ -41,7 +52,6 @@ sudo ldconfig # Refreshing the link library
 mkdir -p ~/ros2_ws/src
 ```
 
-● Extract and copy openNISDk_ROS2_xxx.tar.gz to ~/ros2_ws/src/
 ● Install libusb rules
 
 ```bash
@@ -54,8 +64,8 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 ```bash
  cd ~/ros2_ws
-source /opt/ros/galactic/setup.bash 
-colcon build --event-handlers  console_direct+  --cmake-args  -DCMAKE_BUILD_TYPE=Release
+source /opt/ros/jazzy/setup.bash 
+colcon build
 ```
 
 Starting the camera
@@ -63,7 +73,7 @@ Starting the camera
 ● In terminal 1
 
 ```bash
-source /opt/ros/galactic/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 source ./install/setup.bash 
 ros2 launch astra_camera astra.launch.xml
 ```
@@ -71,7 +81,7 @@ ros2 launch astra_camera astra.launch.xml
 ● In terminal 2
 
 ```bash
-source /opt/ros/galactic/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 source ./install/setup.bash 
 rviz2
 ```
@@ -79,7 +89,7 @@ rviz2
 ● List topics / services/ parameters (open a new terminal)
 
 ```bash
-source /opt/ros/galactic/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 ros2 topic list
 ros2 service list 
 ros2 param list
