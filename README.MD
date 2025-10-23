@@ -385,9 +385,7 @@ export ROS_LOCALHOST_ONLY=1
 export CYCLONEDDS_URI=file:///etc/cyclonedds/config.xml
 ```
 
-Tip：to understand why the maximum ROS_DOMAIN_ID is 232, please visit [The ROS DOMAIN ID]
-
-(https://docs.ros.org/en/humble/Concepts/About-Domain-ID.html)
+Tip：to understand why the maximum ROS_DOMAIN_ID is 232, please visit [The ROS DOMAIN ID](https://docs.ros.org/en/humble/Concepts/About-Domain-ID.html)
 
 
 ● Increase UDP receive buffer size
